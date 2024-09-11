@@ -1,21 +1,27 @@
-const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-
-    entry: './src/index.js',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-    },
-    plugins: [
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: 'src/assets/images',
-                    to: 'dist/images'
-                },
-            ],
-        }),
-    ],
+  mode: "development",
+  entry: {
+    main: path.resolve(__dirname, "./src/index.js"),
+  },
+  output: {
+    path: path.resolve(__dirname, "./dist"),
+    filename: "[name].bundle.js",
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: "./src", to: "src" }],
+    }),
+    new MiniCssExtractPlugin(),
+  ],
+  module: {},
+  devServer: {
+    port: 8001,
+  },
 };
