@@ -1,0 +1,18 @@
+$content-max-width: 1000px;
+$content-min-width: 300px;
+body {
+  max-width: $content-max-width;
+  min-width: $content-min-width;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    #cd0074,
+    #992667,
+    #85004b,
+    #e6399b,
+    #e667af
+  );
+}

@@ -1,0 +1,71 @@
+@content-max-width: 1000px;
+@content-min-width: 300px;
+
+body {
+  max-width: @content-max-width;
+  min-width: @content-min-width;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    #cd0074,
+    #992667,
+    #85004b,
+    #e6399b,
+    #e667af
+  );
+}
+/* Медіа-запит для ширини менше, ніж 1000px (адаптивна ширина) */
+@media (max-width: @content-max-width) {
+  body {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
+nav ul li {
+  padding: 10px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  list-style: none;
+}
+
+/* Адаптивне меню при зменшенні розміру вікна */
+@media (max-width: 768px) {
+  nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul li {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  header {
+    height: auto;
+  }
+}
+/* Стиль для IE 10 та нижче */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ie-message {
+    display: block;
+    background: linear-gradient(
+    90deg,
+    #cd0074,
+    #992667,
+    #85004b,
+    #e6399b,
+    #e667af
+  );
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+}
