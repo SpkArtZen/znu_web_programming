@@ -1,0 +1,73 @@
+.panel {
+    background-color: purple;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    margin: 1rem auto;
+    width: fit-content;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+button {
+    background-color: white;
+    color: purple;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+button.cancel {
+    background-color: red;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 400px;
+}
+
+.add-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.add-field input:nth-child(3) {
+    grid-column: 1 / 2;
+}
+
+.add-field input:nth-child(4) {
+    grid-column: 2 / 3;
+}
+
+input.amount {
+    width: 400px;
+}
